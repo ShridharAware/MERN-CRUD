@@ -39,16 +39,6 @@ const Register: React.FC = () => {
         failure();
         console.log(err);
       });
-
-    // if (response.status === 200) {
-    //   // User registered successfully
-    //   success();
-    // } else {
-    //   // User registration failed
-    //   failure();
-    // }
-
-    // Reset the form data
   };
   return (
     <>
