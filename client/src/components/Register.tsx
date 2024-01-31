@@ -24,24 +24,31 @@ const Register: React.FC = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const url = "/api/user/register";
-    const response = await axios.post(url, formData); // Changed data to formData
-    console.log(response.data);
+    await axios
+      .post(url, formData)
+      .then(() => {
+        success();
+        setFormData({
+          id: "",
+          name: "",
+          company: "",
+        });
+        window.location.reload();
+      })
+      .catch((err) => {
+        failure();
+        console.log(err);
+      });
 
-    if (response.status === 200) {
-      // User registered successfully
-      success();
-    } else {
-      // User registration failed
-      failure();
-    }
+    // if (response.status === 200) {
+    //   // User registered successfully
+    //   success();
+    // } else {
+    //   // User registration failed
+    //   failure();
+    // }
 
     // Reset the form data
-    setFormData({
-      id: "",
-      name: "",
-      company: "",
-    });
-    window.location.reload();
   };
   return (
     <>

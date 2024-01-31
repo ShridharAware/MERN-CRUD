@@ -26,14 +26,16 @@ const UpdateUser: React.FC = () => {
     e.preventDefault(); // Prevent the default form submission behavior
     try {
       const url = `/api/user/${id}`;
-      const response = await axios.put(url, formData);
-      console.log(response.status);
-      if (response.status === 200) {
-        success();
-        navigate("/"); // Navigate to the home page after successful update
-      } else {
-        failure();
-      }
+      await axios
+        .put(url, formData)
+        .then(() => {
+          success();
+          navigate("/");
+        })
+        .catch((err) => {
+          failure();
+          console.log(err);
+        });
     } catch (error) {
       console.error("Error updating user:", error);
       failure();
