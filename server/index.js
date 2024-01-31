@@ -21,7 +21,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://crud-tau-dusky.vercel.app"],
+    origin: ["https://crud-frontend-coral.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
