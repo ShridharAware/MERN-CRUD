@@ -15,7 +15,7 @@ const Users: React.FC = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const users = await axios.get("/api/user/getUser");
+        const users = await axios.get("https://crud-backend-lac.vercel.app/user/getUser");
         setData(users.data);
       } catch (err) {
         console.log(err);
@@ -26,7 +26,7 @@ const Users: React.FC = () => {
   }, []);
 
   const deleteUser = async (id: number) => {
-    const url = `/api/user/${id}`;
+    const url = `https://crud-backend-lac.vercel.app/user/${id}`;
     await axios.delete(url);
     navigate("/");
     window.location.reload();
