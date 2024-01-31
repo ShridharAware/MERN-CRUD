@@ -25,12 +25,12 @@ const UpdateUser: React.FC = () => {
   const updateUser = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent the default form submission behavior
     try {
-      const url = `https://crud-backend-lac.vercel.app/user/${id}`;
+      const url = `https://crud-frontend-coral.vercel.app/user/${id}`;
       await axios
         .put(url, formData)
         .then(() => {
           success();
-          navigate("/");
+          navigate("https://crud-frontend-coral.vercel.app/");
         })
         .catch((err) => {
           failure();
