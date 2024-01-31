@@ -73,7 +73,7 @@ const Users: React.FC = () => {
                 <td className="px-6 py-4">{entry.company}</td>
                 <td className="px-6 py-4">
                   <a
-                    href={`https://crud-backend-lac.vercel.app/user/${entry.id}`}
+                    href={`https://crud-frontend-coral.vercel.app/user/${entry.id}`}
                   >
                     Update
                   </a>
