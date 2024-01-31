@@ -30,7 +30,7 @@ const UpdateUser: React.FC = () => {
         .put(url, formData)
         .then(() => {
           success();
-          navigate("https://crud-frontend-coral.vercel.app");
+          navigate("/");
         })
         .catch((err) => {
           failure();

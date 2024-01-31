@@ -15,7 +15,9 @@ const Users: React.FC = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const users = await axios.get("https://crud-backend-lac.vercel.app/user/getUser");
+        const users = await axios.get(
+          "https://crud-backend-lac.vercel.app/user/getUser"
+        );
         setData(users.data);
       } catch (err) {
         console.log(err);
@@ -70,7 +72,11 @@ const Users: React.FC = () => {
                 <td className="px-6 py-4">{entry.name}</td>
                 <td className="px-6 py-4">{entry.company}</td>
                 <td className="px-6 py-4">
-                  <a href={`/user/${entry.id}`}>Update</a>
+                  <a
+                    href={`https://crud-backend-lac.vercel.app/user/${entry.id}`}
+                  >
+                    Update
+                  </a>
                 </td>
                 <td className="px-6 py-4">
                   <button onClick={() => deleteUser(entry.id)}>Delete</button>
