@@ -23,7 +23,7 @@ const Register: React.FC = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    const url = "/api/user/register";
+    const url = "https://crud-backend-lac.vercel.app/user/register";
     await axios
       .post(url, formData)
       .then(() => {
