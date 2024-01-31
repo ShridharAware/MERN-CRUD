@@ -14,7 +14,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="register" element={<Register />} />
           <Route path="user" element={<Users />} />
-          <Route path="/user/:id" element={<Update />} />
+          <Route
+            path="https://crud-frontend-coral.vercel.app/user/:id"
+            element={<Update />}
+          />
         </Routes>
       </Router>
     </>

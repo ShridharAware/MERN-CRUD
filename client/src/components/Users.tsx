@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 type User = {
   id: number;
   name: string;
@@ -72,11 +72,11 @@ const Users: React.FC = () => {
                 <td className="px-6 py-4">{entry.name}</td>
                 <td className="px-6 py-4">{entry.company}</td>
                 <td className="px-6 py-4">
-                  <a
-                    href={`https://crud-frontend-coral.vercel.app/user/${entry.id}`}
+                  <Link
+                    to={`https://crud-frontend-coral.vercel.app/user/${entry.id}`}
                   >
                     Update
-                  </a>
+                  </Link>
                 </td>
                 <td className="px-6 py-4">
                   <button onClick={() => deleteUser(entry.id)}>Delete</button>
