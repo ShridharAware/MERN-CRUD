@@ -20,13 +20,7 @@ mongoose
 
 const app = express();
 
-app.use(
-  cors({
-    origin: ["https://crud-frontend-coral.vercel.app", "http://localhost:5173"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

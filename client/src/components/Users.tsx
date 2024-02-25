@@ -14,10 +14,9 @@ const Users: React.FC = () => {
 
   useEffect(() => {
     const getData = async () => {
+      const url = "/api/user/getUser";
       try {
-        const users = await axios.get(
-          "https://crud-backend-lac.vercel.app/user/getUser"
-        );
+        const users = await axios.get(url);
         setData(users.data);
       } catch (err) {
         console.log(err);
@@ -28,7 +27,7 @@ const Users: React.FC = () => {
   }, []);
 
   const deleteUser = async (id: number) => {
-    const url = `https://crud-backend-lac.vercel.app/user/${id}`;
+    const url = `/api/user/${id}`;
     await axios.delete(url);
     navigate("/");
     window.location.reload();
@@ -72,11 +71,7 @@ const Users: React.FC = () => {
                 <td className="px-6 py-4">{entry.name}</td>
                 <td className="px-6 py-4">{entry.company}</td>
                 <td className="px-6 py-4">
-                  <Link
-                    to={`https://crud-frontend-coral.vercel.app/user/${entry.id}`}
-                  >
-                    Update
-                  </Link>
+                  <Link to={`/user/${entry.id}`}>Update</Link>
                 </td>
                 <td className="px-6 py-4">
                   <button onClick={() => deleteUser(entry.id)}>Delete</button>
